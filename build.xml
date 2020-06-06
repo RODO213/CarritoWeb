@@ -33,7 +33,7 @@
     <sonar:sonar />
 </target>
 
-<property name = "testdir" location = "test" />
+   <property name = "testdir" location = "test" />
    <property name = "srcdir" location = "src/modelo" />
    <property name = "full-compile" value = "true" />
 	
