@@ -7,31 +7,9 @@
 <!-- the Compile on Save feature is turned off for the project. -->
 <!-- You can turn off the Compile on Save (or Deploy on Save) setting -->
 <!-- in the project's Project Properties dialog box.-->
-<project name="CarritoComprasWeb" default="default" basedir="." xmlns:sonar="antlib:org.sonar.ant">
+<project name="CarritoComprasWeb" default="default" basedir=".">
     <description>Builds, tests, and runs the project CarritoComprasWeb.</description>
     <import file="nbproject/build-impl.xml"/>
-    <!-- Define the SonarQube global properties (the most usual way is to pass these properties via the command line) -->
-<property name="sonar.host.url" value="http://localhost:9000" />
-
-<!-- Define the SonarQube project properties -->
-<property name="sonar.projectKey" value="org.sonarqube:sonarqube-scanner-ant" />
-<property name="sonar.projectName" value="Trabajo 2 Tecnicas" />
-<property name="sonar.projectVersion" value="1.0" />
-<property name="sonar.sources" value="src" />
-<property name="sonar.java.binaries" value="build" />
-<!--<property name="sonar.java.libraries" value="lib/*.jar" />-->
-
-
-<!-- Define SonarScanner for Ant Target -->
-<target name="sonar">
-    <taskdef uri="antlib:org.sonar.ant" resource="org/sonar/ant/antlib.xml">
-        <!-- Update the following line, or put the "sonarqube-ant-task-*.jar" file in your "$HOME/.ant/lib" folder -->
-        <classpath path="C:\Users\Rodolfo\Desktop\apache-ant-1.9.15\lib\sonarqube-ant-task-*.jar" />
-    </taskdef>
- 
-    <!-- Execute SonarScanner for Ant Analysis -->
-    <sonar:sonar />
-</target>
     <!--
 
     There exist several targets which are by default empty and which can be 
