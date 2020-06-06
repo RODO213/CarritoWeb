@@ -34,7 +34,7 @@
 </target>
 
 <property name = "testdir" location = "test" />
-   <property name = "srcdir" location = "src" />
+   <property name = "srcdir" location = "src/modelo" />
    <property name = "full-compile" value = "true" />
 	
    <path id = "classpath.base"/>
