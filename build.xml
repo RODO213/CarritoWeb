@@ -33,26 +33,49 @@
     <sonar:sonar />
 </target>
 
-   <property name = "testdir" location = "test" />
-   <property name = "srcdir" location = "src/modelo" />
+   <property name = "testdir" location = "test/" />
+   <property name = "srcdir" location = "src" />
    <property name = "full-compile" value = "true" />
 	
    <path id = "classpath.base"/>
 	
    <path id = "classpath.test">
-      <pathelement location = "lib/junit-4.12.jar" />
+      <pathelement location = "C:\Users\Rodolfo\Desktop\apache-ant-1.9.15\lib\junit-4.12.jar" />
+
       <pathelement location = "${testdir}" />
       <pathelement location = "${srcdir}" />
       <path refid = "classpath.base" />
    </path>
-    
+
+
+<!--
     <target name = "test">
       <junit>
          <classpath refid = "classpath.test" />
          <formatter type = "brief" usefile = "false" />
-         <test name = "TestMessageUtil" />
+         <test name = "CarritoTest" />
       </junit>
-   </target>
+   </target>-->
+
+   <target name="unit-test">
+    <junit printsummary="false" fork="off" haltonfailure="true">
+        <classpath>
+          <path refid="classpath.test"/>
+          <fileset dir="${testdir}"/>
+        </classpath>
+
+        <formatter type="brief" usefile="false" />
+
+        <test name="CarritoTest" />
+
+        <!--<batchtest todir="${reports.dir}" >
+            <fileset dir="${testclasses.home}" >
+                <exclude name="**/AllTests*"/>
+                <include name="**/*Test.class" />
+            </fileset>
+        </batchtest>-->
+    </junit>
+</target>
 
 
 </project>
