@@ -29,9 +29,17 @@ public class CarritoTest {
     public static void tearDownClass() {
     }
     
+    int item;
+     int idProducto;
+     String nombres;
+     String descripcion;
+     double precioCompra;
+     int cantidad;
+     double subTotal;
+     
     @Before
     public void setUp() {
-    }
+         }
     
     @After
     public void tearDown() {
@@ -43,13 +51,13 @@ public class CarritoTest {
     @Test
     public void testGetItem() {
         System.out.println("getItem");
-        Carrito instance = new Carrito();
-        int expResult = 0;
-        int result = instance.getItem();
-        //assertEquals(expResult, result);
-        assertTrue(true);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        Carrito carrito = new Carrito(1,1,"Ejemplo CARRITO", "Este es un objeto para hacer test unitarios",9990,1,5000);
+   
+        int esperado = 1;
+        
+        int resultado = carrito.getItem();
+        
+        assertEquals(esperado, resultado);
     }
 
     /**
@@ -59,10 +67,14 @@ public class CarritoTest {
     public void testSetItem() {
         System.out.println("setItem");
         int item = 0;
+        int esperado = 0;
         Carrito instance = new Carrito();
         instance.setItem(item);
+        
+        int resultado = instance.getItem();
         // TODO review the generated test code and remove the default call to fail.
-        assertTrue(true);
+        assertEquals(esperado, resultado);
+
         //fail("The test case is a prototype.");
     }
 
@@ -72,13 +84,11 @@ public class CarritoTest {
     @Test
     public void testGetIdProducto() {
         System.out.println("getIdProducto");
-        Carrito instance = new Carrito();
-        int expResult = 0;
+        Carrito instance = new Carrito(2,2,"Cualquier cosa","Lo mismo", 2000,1,2000);
+        int expResult = 2;
         int result = instance.getIdProducto();
-        assertTrue(true);
-        //assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        
+        assertEquals(expResult, result);
     }
 
     /**
@@ -87,11 +97,12 @@ public class CarritoTest {
     @Test
     public void testSetIdProducto() {
         System.out.println("setIdProducto");
-        int idProducto = 0;
+        int idProducto = 1;
+        int resultadoesperado = 1;
         Carrito instance = new Carrito();
         instance.setIdProducto(idProducto);
         
-        assertTrue(true);
+        assertEquals(resultadoesperado, instance.getIdProducto());
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
@@ -102,11 +113,11 @@ public class CarritoTest {
     @Test
     public void testGetNombres() {
         System.out.println("getNombres");
-        Carrito instance = new Carrito();
-        String expResult = "nombres";//revisar
+        Carrito instance = new Carrito(3,3,"Nombre","Nombres", 3000,3,3000);
+        String expResult = "Nombre";//revisar
         String result = instance.getNombres();
-        assertTrue(true);
-        //assertEquals(expResult, result);
+        //assertTrue(true);
+        assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         /*
         if (!result.equals(expResult)){//revisar
@@ -120,12 +131,14 @@ public class CarritoTest {
     @Test
     public void testSetNombres() {
         System.out.println("setNombres");
-        String nombres = "";
+        String nombres = "Nombre";
+        String resultadoesperado = "Nombre";
         Carrito instance = new Carrito();
         instance.setNombres(nombres);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
-        assertTrue(true);
+        //assertTrue(true);
+        assertEquals(resultadoesperado, instance.getNombres());
     }
 
     /**
@@ -134,13 +147,14 @@ public class CarritoTest {
     @Test
     public void testGetDescripcion() {
         System.out.println("getDescripcion");
-        Carrito instance = new Carrito();
-        String expResult = "";
+        Carrito instance = new Carrito(4,4,"Alfa","Alfa romeo", 4000,4,4000);
+        String expResult = "Alfa romeo";
         String result = instance.getDescripcion();
         //assertEquals(expResult, result);
-        assertTrue(true);
+        //assertTrue(true);
         // TODO review the generated test code and remove the default call to fail.
         // fail("The test case is a prototype.");
+        assertEquals(expResult, result);
     }
 
     /**
@@ -149,12 +163,14 @@ public class CarritoTest {
     @Test
     public void testSetDescripcion() {
         System.out.println("setDescripcion");
-        String descripcion = "";
+        String descripcion = "Alfa romeo";
+        String resultadoesperado = "Alfa romeo";
         Carrito instance = new Carrito();
         instance.setDescripcion(descripcion);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
-        assertTrue(true);
+        //assertTrue(true);
+        assertEquals(resultadoesperado, instance.getDescripcion());
     }
 
     /**
@@ -163,13 +179,14 @@ public class CarritoTest {
     @Test
     public void testGetPrecioCompra() {
         System.out.println("getPrecioCompra");
-        Carrito instance = new Carrito();
-        double expResult = 0.0;
+        Carrito instance = new Carrito(5,5,"Japon","Toyota", 5000,4,5000);
+        double expResult = 5000.0;
         double result = instance.getPrecioCompra();
         //assertEquals(expResult, result, 0.0);
-        assertTrue(true);
+        //assertTrue(true);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
+        assertEquals(expResult, result,0.001);        
     }
 
     /**
@@ -178,12 +195,14 @@ public class CarritoTest {
     @Test
     public void testSetPrecioCompra() {
         System.out.println("setPrecioCompra");
-        double precioCompra = 0.0;
+        double precioCompra = 5000.0;
+        double resultadoesperado = 5000.0;
         Carrito instance = new Carrito();
         instance.setPrecioCompra(precioCompra);
-        assertTrue(true);
+        //assertTrue(true);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
+        assertEquals(resultadoesperado, instance.getPrecioCompra(),0.001);
     }
 
     /**
@@ -192,13 +211,14 @@ public class CarritoTest {
     @Test
     public void testGetCantidad() {
         System.out.println("getCantidad");
-        Carrito instance = new Carrito();
-        int expResult = 0;
+        Carrito instance = new Carrito(6,6,"China","Changan", 6000,6,6000);
+        int expResult = 6;
         int result = instance.getCantidad();
-        assertTrue(true);
+        //assertTrue(true);
         //assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
+        assertEquals(expResult, result); 
     }
 
     /**
@@ -207,12 +227,14 @@ public class CarritoTest {
     @Test
     public void testSetCantidad() {
         System.out.println("setCantidad");
-        int cantidad = 0;
+        int cantidad = 6;
+        int resultadoesperado = 6;
         Carrito instance = new Carrito();
         instance.setCantidad(cantidad);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
-        assertTrue(true);
+        //assertTrue(true);
+        assertEquals(resultadoesperado, instance.getCantidad());
     }
 
     /**
@@ -221,13 +243,14 @@ public class CarritoTest {
     @Test
     public void testGetSubTotal() {
         System.out.println("getSubTotal");
-        Carrito instance = new Carrito();
-        double expResult = 0.0;
+        Carrito instance = new Carrito(7,7,"Peru","Soap", 7000,7,7000);
+        double expResult = 7000.0;
         double result = instance.getSubTotal();
         //assertEquals(expResult, result, 0.0);
-        assertTrue(true);
+        //assertTrue(true);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
+        assertEquals(expResult, result,0.001);
     }
 
     /**
@@ -236,13 +259,15 @@ public class CarritoTest {
     @Test
     public void testSetSubTotal() {
         System.out.println("setSubTotal");
-        double subTotal = 0.0;
+        double subTotal = 7000.0;
+        double resultadoesperado = 7000.0;
         Carrito instance = new Carrito();
         instance.setSubTotal(subTotal);
         
-        assertTrue(true);
+        //assertTrue(true);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
+        assertEquals(resultadoesperado, instance.getSubTotal(),0.001);
     }
     
 }
