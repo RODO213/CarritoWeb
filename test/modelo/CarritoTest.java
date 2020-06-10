@@ -195,7 +195,7 @@ public class CarritoTest {
     @Test
     public void testSetPrecioCompra() {
         System.out.println("setPrecioCompra");
-        double precioCompra = 6000.0;
+        double precioCompra = 5000.0;
         double resultadoesperado = 5000.0;
         Carrito instance = new Carrito();
         instance.setPrecioCompra(precioCompra);
@@ -211,7 +211,7 @@ public class CarritoTest {
     @Test
     public void testGetCantidad() {
         System.out.println("getCantidad");
-        Carrito instance = new Carrito(7,7,"China","Changan", 6000,6,6000);
+        Carrito instance = new Carrito(6,6,"China","Changan", 6000,6,6000);
         int expResult = 6;
         int result = instance.getCantidad();
         //assertTrue(true);
